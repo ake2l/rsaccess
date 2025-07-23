@@ -4,6 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { 
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
+import { 
   Search, 
   Filter, 
   Plus, 
@@ -14,7 +22,10 @@ import {
   Clock,
   CheckCircle,
   AlertCircle,
-  Download
+  Download,
+  Calculator,
+  BarChart3,
+  Grid3X3
 } from "lucide-react";
 
 const PolicyManagement = () => {
@@ -151,77 +162,117 @@ const PolicyManagement = () => {
         </CardContent>
       </Card>
 
-      {/* Policies Table */}
-      <Card className="border-none shadow-card-hover">
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            <FileText className="w-5 h-5 text-primary" />
-            Active Policies ({filteredPolicies.length})
-          </CardTitle>
+      {/* Excel-like Policy Grid */}
+      <Card className="border-none shadow-card-hover bg-gradient-to-br from-card to-card/80">
+        <CardHeader className="bg-gradient-to-r from-primary/5 to-accent/5 border-b">
+          <div className="flex items-center justify-between">
+            <CardTitle className="flex items-center gap-2">
+              <Grid3X3 className="w-5 h-5 text-primary" />
+              Policy Spreadsheet ({filteredPolicies.length} rows)
+            </CardTitle>
+            <div className="flex items-center gap-2">
+              <Button variant="outline" size="sm">
+                <Calculator className="w-4 h-4 mr-2" />
+                Formulas
+              </Button>
+              <Button variant="outline" size="sm">
+                <BarChart3 className="w-4 h-4 mr-2" />
+                Charts
+              </Button>
+            </div>
+          </div>
         </CardHeader>
-        <CardContent>
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead>
-                <tr className="border-b border-border">
-                  <th className="text-left py-3 px-4 font-semibold text-foreground">Policy</th>
-                  <th className="text-left py-3 px-4 font-semibold text-foreground">Holder</th>
-                  <th className="text-left py-3 px-4 font-semibold text-foreground">Type</th>
-                  <th className="text-left py-3 px-4 font-semibold text-foreground">Premium</th>
-                  <th className="text-left py-3 px-4 font-semibold text-foreground">Status</th>
-                  <th className="text-left py-3 px-4 font-semibold text-foreground">Expiration</th>
-                  <th className="text-left py-3 px-4 font-semibold text-foreground">Agent</th>
-                  <th className="text-left py-3 px-4 font-semibold text-foreground">Actions</th>
-                </tr>
-              </thead>
-              <tbody>
+        <CardContent className="p-0">
+          <div className="overflow-auto max-h-[600px]">
+            <Table>
+              <TableHeader className="sticky top-0 bg-muted/50 backdrop-blur-sm">
+                <TableRow className="hover:bg-transparent border-b-2 border-primary/20">
+                  <TableHead className="w-[50px] bg-muted/80 font-bold text-center border-r">A</TableHead>
+                  <TableHead className="min-w-[160px] bg-muted/80 font-bold border-r">Policy ID</TableHead>
+                  <TableHead className="min-w-[200px] bg-muted/80 font-bold border-r">Policy Holder</TableHead>
+                  <TableHead className="min-w-[180px] bg-muted/80 font-bold border-r">Type</TableHead>
+                  <TableHead className="min-w-[120px] bg-muted/80 font-bold border-r">Premium</TableHead>
+                  <TableHead className="min-w-[130px] bg-muted/80 font-bold border-r">Status</TableHead>
+                  <TableHead className="min-w-[120px] bg-muted/80 font-bold border-r">Effective</TableHead>
+                  <TableHead className="min-w-[120px] bg-muted/80 font-bold border-r">Expiration</TableHead>
+                  <TableHead className="min-w-[120px] bg-muted/80 font-bold border-r">Agent</TableHead>
+                  <TableHead className="min-w-[100px] bg-muted/80 font-bold">Actions</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
                 {filteredPolicies.map((policy, index) => (
-                  <tr key={index} className="border-b border-border hover:bg-muted/30 transition-colors">
-                    <td className="py-4 px-4">
-                      <div className="font-medium text-foreground">{policy.id}</div>
-                      <div className="text-sm text-muted-foreground">{policy.effectiveDate}</div>
-                    </td>
-                    <td className="py-4 px-4">
-                      <div className="font-medium text-foreground">{policy.policyHolder}</div>
-                    </td>
-                    <td className="py-4 px-4">
-                      <div className="text-foreground">{policy.type}</div>
-                    </td>
-                    <td className="py-4 px-4">
-                      <div className="font-semibold text-foreground">{policy.premium}</div>
-                      <div className="text-sm text-muted-foreground">Annual</div>
-                    </td>
-                    <td className="py-4 px-4">
-                      <Badge variant="outline" className={getStatusColor(policy.status)}>
+                  <TableRow 
+                    key={index} 
+                    className="hover:bg-accent/10 transition-all duration-200 group border-b border-border/50"
+                  >
+                    <TableCell className="text-center font-mono text-xs bg-muted/30 border-r font-bold text-muted-foreground">
+                      {index + 2}
+                    </TableCell>
+                    <TableCell className="font-mono text-sm border-r group-hover:bg-primary/5 transition-colors">
+                      <div className="font-semibold text-primary">{policy.id}</div>
+                      <div className="text-xs text-muted-foreground">{policy.effectiveDate}</div>
+                    </TableCell>
+                    <TableCell className="border-r group-hover:bg-primary/5 transition-colors">
+                      <div className="font-medium">{policy.policyHolder}</div>
+                    </TableCell>
+                    <TableCell className="border-r group-hover:bg-primary/5 transition-colors">
+                      <div className="text-sm">{policy.type}</div>
+                    </TableCell>
+                    <TableCell className="border-r group-hover:bg-primary/5 transition-colors">
+                      <div className="font-bold text-success">{policy.premium}</div>
+                      <div className="text-xs text-muted-foreground">Annual</div>
+                    </TableCell>
+                    <TableCell className="border-r group-hover:bg-primary/5 transition-colors">
+                      <Badge variant="outline" className={`${getStatusColor(policy.status)} text-xs`}>
                         <div className="flex items-center gap-1">
                           {getStatusIcon(policy.status)}
                           {policy.status}
                         </div>
                       </Badge>
-                    </td>
-                    <td className="py-4 px-4">
-                      <div className="text-foreground">{policy.expirationDate}</div>
-                    </td>
-                    <td className="py-4 px-4">
-                      <div className="text-foreground">{policy.agent}</div>
-                    </td>
-                    <td className="py-4 px-4">
-                      <div className="flex items-center gap-2">
-                        <Button variant="ghost" size="sm">
-                          <Eye className="w-4 h-4" />
+                    </TableCell>
+                    <TableCell className="text-sm border-r group-hover:bg-primary/5 transition-colors">
+                      {policy.effectiveDate}
+                    </TableCell>
+                    <TableCell className="text-sm border-r group-hover:bg-primary/5 transition-colors">
+                      {policy.expirationDate}
+                    </TableCell>
+                    <TableCell className="text-sm border-r group-hover:bg-primary/5 transition-colors">
+                      {policy.agent}
+                    </TableCell>
+                    <TableCell className="group-hover:bg-primary/5 transition-colors">
+                      <div className="flex items-center gap-1">
+                        <Button variant="ghost" size="sm" className="h-8 w-8 p-0 hover:bg-primary/20">
+                          <Eye className="w-3 h-3" />
                         </Button>
-                        <Button variant="ghost" size="sm">
-                          <Edit className="w-4 h-4" />
+                        <Button variant="ghost" size="sm" className="h-8 w-8 p-0 hover:bg-primary/20">
+                          <Edit className="w-3 h-3" />
                         </Button>
-                        <Button variant="ghost" size="sm">
-                          <MoreHorizontal className="w-4 h-4" />
+                        <Button variant="ghost" size="sm" className="h-8 w-8 p-0 hover:bg-primary/20">
+                          <MoreHorizontal className="w-3 h-3" />
                         </Button>
                       </div>
-                    </td>
-                  </tr>
+                    </TableCell>
+                  </TableRow>
                 ))}
-              </tbody>
-            </table>
+              </TableBody>
+            </Table>
+          </div>
+          
+          {/* Excel-like Status Bar */}
+          <div className="bg-muted/30 border-t px-4 py-2 text-xs flex items-center justify-between">
+            <div className="flex items-center gap-4">
+              <span>Ready</span>
+              <span className="text-muted-foreground">|</span>
+              <span>Sum: <span className="font-semibold text-success">$154,650</span></span>
+              <span className="text-muted-foreground">|</span>
+              <span>Count: <span className="font-semibold">{filteredPolicies.length}</span></span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-muted-foreground">Sheet 1</span>
+              <Button variant="ghost" size="sm" className="h-6 text-xs">
+                +
+              </Button>
+            </div>
           </div>
         </CardContent>
       </Card>

@@ -3,6 +3,7 @@ import Header from "@/components/layout/Header";
 import DashboardHome from "@/components/dashboard/DashboardHome";
 import PolicyManagement from "@/components/dashboard/PolicyManagement";
 import LowCodeBuilder from "@/components/dashboard/LowCodeBuilder";
+import SpreadsheetView from "@/components/dashboard/SpreadsheetView";
 import { Button } from "@/components/ui/button";
 import { 
   Home, 
@@ -14,7 +15,8 @@ import {
   BarChart3,
   Settings,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Grid3X3
 } from "lucide-react";
 
 const Dashboard = () => {
@@ -28,6 +30,7 @@ const Dashboard = () => {
     { id: "customers", name: "Customers", icon: Users },
     { id: "finance", name: "Finance", icon: DollarSign },
     { id: "builder", name: "Low-Code Builder", icon: Code },
+    { id: "spreadsheet", name: "Excel Calculator", icon: Grid3X3 },
     { id: "analytics", name: "Analytics", icon: BarChart3 },
     { id: "settings", name: "Settings", icon: Settings }
   ];
@@ -40,6 +43,8 @@ const Dashboard = () => {
         return <PolicyManagement />;
       case "builder":
         return <LowCodeBuilder />;
+      case "spreadsheet":
+        return <SpreadsheetView />;
       case "claims":
         return (
           <div className="p-6">

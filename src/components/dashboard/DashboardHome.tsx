@@ -12,7 +12,8 @@ import {
   Plus,
   Code,
   Database,
-  BarChart3
+  BarChart3,
+  Grid3X3
 } from "lucide-react";
 
 const DashboardHome = () => {
@@ -89,6 +90,13 @@ const DashboardHome = () => {
       icon: Code,
       users: 45,
       color: "bg-blue-500/10 text-blue-500"
+    },
+    {
+      title: "Excel Calculator",
+      description: "Spreadsheet with formulas and analytics",
+      icon: Grid3X3,
+      users: 78,
+      color: "bg-brand-green/10 text-brand-green"
     }
   ];
 
