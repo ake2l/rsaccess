@@ -1,11 +1,39 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import PublicSite from "./PublicSite";
+import Dashboard from "./Dashboard";
 
 const Index = () => {
+  const [currentView, setCurrentView] = useState<"public" | "dashboard">("public");
+
+  if (currentView === "dashboard") {
+    return <Dashboard />;
+  }
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="relative">
+      <PublicSite />
+      
+      {/* Demo Toggle Button */}
+      <div className="fixed top-4 right-4 z-50">
+        <Button 
+          variant="hero" 
+          onClick={() => setCurrentView("dashboard")}
+          className="shadow-glow"
+        >
+          View Dashboard Demo
+        </Button>
+      </div>
+      
+      {/* Dashboard Demo Button */}
+      <div className="fixed bottom-4 right-4 z-50">
+        <Button 
+          variant="accent" 
+          onClick={() => setCurrentView(currentView === "public" ? "dashboard" : "public")}
+          className="shadow-glow"
+        >
+          {currentView === "public" ? "Dashboard Demo" : "← Back to Site"}
+        </Button>
       </div>
     </div>
   );
