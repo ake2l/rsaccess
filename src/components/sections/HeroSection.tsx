@@ -15,27 +15,27 @@ const HeroSection = () => {
           <div className="inline-flex items-center gap-2 bg-background/10 backdrop-blur-sm border border-primary-foreground/20 rounded-full px-4 py-2 mb-8 animate-fade-in">
             <div className="w-2 h-2 bg-success rounded-full animate-pulse"></div>
             <span className="text-primary-foreground text-sm font-medium">
-              In Production Since June 2024 • The Alliance Insurance
+              Enterprise-Ready Platform • Privacy-Compliant • Multi-Language Support
             </span>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 animate-slide-up">
-            Transform Your{" "}
+            Lowest-Code{" "}
             <span className="bg-gradient-accent bg-clip-text text-transparent">
-              Business
+              Platform
             </span>
           </h1>
 
           {/* Subheadline */}
           <h2 className="text-2xl md:text-3xl text-primary-foreground/90 mb-4 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            Beyond the AI Hype: Real Power, Real Control
+            No-Code Development for Enterprise Applications
           </h2>
 
           {/* Description */}
           <p className="text-lg md:text-xl text-primary-foreground/80 mb-12 max-w-3xl mx-auto animate-slide-up" style={{ animationDelay: '0.4s' }}>
-            A revolutionary Office & ERP platform redefining productivity for insurers.{" "}
-            <span className="text-accent font-semibold">Create Faster • Customize Freely • Automate Everything</span>
+            Build cross-platform software with RPA automation and cloud infrastructure.{" "}
+            <span className="text-accent font-semibold">Java • Kotlin • Python • Desktop & Web</span>
           </p>
 
           {/* CTA Buttons */}
@@ -54,20 +54,20 @@ const HeroSection = () => {
           {/* Stats Row */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 animate-slide-up" style={{ animationDelay: '0.8s' }}>
             <div className="text-center">
-              <div className="text-3xl font-bold text-accent mb-2">99.9%</div>
-              <div className="text-sm text-primary-foreground/70">Uptime</div>
+              <div className="text-3xl font-bold text-accent mb-2">8</div>
+              <div className="text-sm text-primary-foreground/70">Languages</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-accent mb-2">40%</div>
-              <div className="text-sm text-primary-foreground/70">Faster Processing</div>
+              <div className="text-3xl font-bold text-accent mb-2">100%</div>
+              <div className="text-sm text-primary-foreground/70">Privacy-First</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-accent mb-2">$2.1M</div>
-              <div className="text-sm text-primary-foreground/70">Cost Savings</div>
+              <div className="text-3xl font-bold text-accent mb-2">K8s</div>
+              <div className="text-sm text-primary-foreground/70">Cloud Ready</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-accent mb-2">18mo</div>
-              <div className="text-sm text-primary-foreground/70">Production Ready</div>
+              <div className="text-3xl font-bold text-accent mb-2">RPA</div>
+              <div className="text-sm text-primary-foreground/70">Automation</div>
             </div>
           </div>
         </div>

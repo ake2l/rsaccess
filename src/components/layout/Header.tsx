@@ -14,10 +14,8 @@ const Header = ({ variant = "public" }: HeaderProps) => {
       <header className="bg-card border-b border-border px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-gradient-accent rounded-lg flex items-center justify-center">
-              <span className="text-accent-foreground font-bold text-sm">LC</span>
-            </div>
-            <span className="text-lg font-semibold text-foreground">Lowest-Code®</span>
+            <img src="/logos/rsaccess-logo.svg" alt="RSAccess Logo" className="w-8 h-8" />
+            <span className="text-lg font-semibold text-foreground">RSAccess</span>
           </div>
           <div className="flex items-center gap-4">
             <span className="text-sm text-muted-foreground">The Alliance Insurance</span>
@@ -33,10 +31,8 @@ const Header = ({ variant = "public" }: HeaderProps) => {
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-brand-dark rounded-xl flex items-center justify-center">
-              <span className="text-accent font-bold text-lg">LC</span>
-            </div>
-            <span className="text-xl font-bold text-foreground">Lowest-Code®</span>
+            <img src="/logos/rsaccess-logo.svg" alt="RSAccess Logo" className="w-10 h-10" />
+            <span className="text-xl font-bold text-foreground">RSAccess</span>
           </div>
 
           {/* Desktop Navigation */}

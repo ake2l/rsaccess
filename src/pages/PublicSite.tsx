@@ -19,27 +19,25 @@ const PublicSite = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-accent rounded-xl flex items-center justify-center">
-                  <span className="text-accent-foreground font-bold text-lg">LC</span>
-                </div>
-                <span className="text-xl font-bold">Lowest-Code®</span>
+                <img src="/logos/rsaccess-logo.svg" alt="RSAccess Logo" className="w-10 h-10" />
+                <span className="text-xl font-bold">RSAccess</span>
               </div>
               <p className="text-primary-foreground/80 mb-4 max-w-md">
-                Revolutionizing insurance operations with unified Office & ERP platform. 
-                Beyond the AI hype: real power, real control.
+                Leading provider of Lowest-Code / No-Code software development platform. 
+                Empowering businesses with RPA, cross-platform solutions, and cloud infrastructure.
               </p>
               <div className="text-sm text-primary-foreground/60">
-                #lowestcode • In production since June 2024
+                #rsaccess • Privacy-compliant • Enterprise-ready
               </div>
             </div>
             
             <div>
               <h3 className="font-semibold mb-4">Platform</h3>
               <ul className="space-y-2 text-primary-foreground/80">
-                <li><a href="#platform" className="hover:text-accent transition-colors">Office Suite</a></li>
-                <li><a href="#platform" className="hover:text-accent transition-colors">Low-Code Studio</a></li>
-                <li><a href="#platform" className="hover:text-accent transition-colors">ERP Modules</a></li>
-                <li><a href="#platform" className="hover:text-accent transition-colors">Enterprise IDE</a></li>
+                <li><a href="#platform" className="hover:text-accent transition-colors">Lowest-Office</a></li>
+                <li><a href="#platform" className="hover:text-accent transition-colors">Lowest-Media</a></li>
+                <li><a href="#platform" className="hover:text-accent transition-colors">Lowest-Cloud</a></li>
+                <li><a href="#platform" className="hover:text-accent transition-colors">RPA Solutions</a></li>
               </ul>
             </div>
             
@@ -49,13 +47,13 @@ const PublicSite = () => {
                 <li><a href="#investors" className="hover:text-accent transition-colors">Investors</a></li>
                 <li><a href="#traction" className="hover:text-accent transition-colors">Case Studies</a></li>
                 <li><a href="#roadmap" className="hover:text-accent transition-colors">Roadmap</a></li>
-                <li><a href="mailto:contact@lowestcode.com" className="hover:text-accent transition-colors">Contact</a></li>
+                <li><a href="mailto:info@rsaccess.net" className="hover:text-accent transition-colors">Contact</a></li>
               </ul>
             </div>
           </div>
           
           <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center text-primary-foreground/60">
-            <p>&copy; 2024 Lowest-Code®. All rights reserved.</p>
+            <p>&copy; 2024 RSAccess GmbH. All rights reserved.</p>
           </div>
         </div>
       </footer>

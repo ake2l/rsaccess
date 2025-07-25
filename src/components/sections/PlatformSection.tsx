@@ -15,30 +15,30 @@ const PlatformSection = () => {
   const platformFeatures = [
     {
       icon: FileSpreadsheet,
-      title: "Unified Office Suite",
-      description: "Documents, spreadsheets, presentations, and databases in one seamless environment",
-      features: ["Real-time collaboration", "Version control", "Template library", "AI assistance"],
+      title: "Lowest-Office",
+      description: "Privacy-compliant office package with integrated document management",
+      features: ["GDPR Compliant", "On-premise option", "Multi-language support", "Zero data leakage"],
       color: "bg-primary/10 text-primary"
     },
     {
       icon: Code,
-      title: "Low-Code Studio",
-      description: "Visual workflow builder for insurance processes without technical complexity",
-      features: ["Drag-and-drop interface", "Pre-built templates", "Custom logic rules", "API integrations"],
+      title: "Lowest-Code Platform",
+      description: "Build enterprise applications without traditional coding complexity",
+      features: ["Java/Kotlin/Python", "Cross-platform", "Visual development", "RPA integration"],
       color: "bg-accent/10 text-accent"
     },
     {
       icon: Database,
-      title: "ERP Foundation",
-      description: "Complete business management system designed for insurance operations",
-      features: ["Policy management", "Claims processing", "Financial tracking", "Compliance tools"],
+      title: "Lowest-Media",
+      description: "Privacy-focused media management and collaboration platform",
+      features: ["Secure file sharing", "Media processing", "Version control", "Access management"],
       color: "bg-success/10 text-success"
     },
     {
       icon: Monitor,
-      title: "Enterprise IDE",
-      description: "Advanced development environment for technical teams and customizations",
-      features: ["Full-stack development", "Custom extensions", "API development", "Advanced debugging"],
+      title: "Lowest-Cloud",
+      description: "Scalable cloud infrastructure with Docker and Kubernetes support",
+      features: ["Container orchestration", "Auto-scaling", "Multi-cloud support", "DevOps ready"],
       color: "bg-purple-500/10 text-purple-500"
     }
   ];
@@ -46,9 +46,9 @@ const PlatformSection = () => {
   const valueProps = [
     {
       icon: Shield,
-      title: "Security & Compliance",
-      description: "Enterprise-grade security with insurance industry compliance built-in",
-      highlights: ["SOC 2 Type II", "GDPR Compliant", "256-bit Encryption", "Audit Trails"]
+      title: "Privacy & Security",
+      description: "Privacy-first approach with enterprise-grade security standards",
+      highlights: ["100% Data Privacy", "GDPR Compliant", "On-premise Option", "Zero Tracking"]
     },
     {
       icon: Puzzle,
@@ -58,9 +58,9 @@ const PlatformSection = () => {
     },
     {
       icon: Zap,
-      title: "Performance & Speed",
-      description: "Lightning-fast response times with cloud-native architecture",
-      highlights: ["Sub-second Queries", "99.9% Uptime", "Auto-scaling", "Global CDN"]
+      title: "Database Support",
+      description: "Comprehensive database support for all major platforms",
+      highlights: ["PostgreSQL", "SQLite", "MS SQL Server", "MySQL"]
     }
   ];
 
@@ -80,8 +80,8 @@ const PlatformSection = () => {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Built from the ground up to eliminate the complexity of managing multiple software systems. 
-            Everything your insurance business needs in one unified, powerful platform.
+            Built from the ground up to provide a comprehensive software development ecosystem. 
+            Everything your business needs for modern application development and deployment.
           </p>
         </div>
 
@@ -115,7 +115,7 @@ const PlatformSection = () => {
         {/* Value Propositions */}
         <div className="max-w-6xl mx-auto">
           <h3 className="text-3xl font-bold text-foreground text-center mb-12">
-            Why Choose Lowest-Code®?
+            Why Choose RSAccess?
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {valueProps.map((prop, index) => (
